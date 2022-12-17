@@ -3,11 +3,22 @@
   "name": "No Refund",
   "description": "Base Level Extension",
   "version": "1.0",
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "action": {},
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["activeTab", "scripting", "tabGroups", "<all_urls>"]
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["popup.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "nativeMessaging",
+    "activeTab",
+    "scripting",
+    "tabGroups",
+    "<all_urls>"
+  ]
 }
