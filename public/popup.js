@@ -77,3 +77,11 @@
 //     console.log(response);
 //   })()
 // );
+
+const button = document.querySelector(".button");
+
+const onClickBtn = () => {
+  window.open("https://github.com/ilmerry", "_blank").focus();
+};
+
+button.addEventListener("click", onClickBtn);
